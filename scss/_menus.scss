@@ -1,0 +1,86 @@
+.menu-lateral {
+    position: relative;
+    border: solid 1px;
+    font-size: 1em;
+    &>p {
+        font-size: 1.3em;
+        padding: 5px;
+        background-color: lighten($cinza, 14%);
+        border-bottom: solid 1px #ccc;
+    }
+    &>ul {
+        list-style: none;
+        width: 100%;
+        &>li {
+            width: 100%;
+            border-bottom: solid 1px #ccc;
+            &>a {
+                width: 100;
+                cursor: pointer;
+                display: block;
+                padding: 5px;
+                font-size: 0.8em;
+                @include transicao;
+                &:hover {
+                    background-color: lighten($cinza, 14%);
+                    @include transicao;
+                }
+                &:hover>i {
+                    color: $azul;
+                    @include transicao;
+                }
+                &>i {
+                    font-size: 0.9em
+                }
+            }
+            &.selecionado {
+                border-left: solid 1px $azul;
+                &>a>i {
+                    color: $azul;
+                    font-size: 0.9em
+                }
+            }
+        }
+    }
+}
+
+.abas {
+    position: relative;
+    &>ul {
+        display: table;
+        list-style: none;
+        &>li {
+            display: inline-block;
+            float: left;
+            border-bottom: solid 1px lighten($preto, 90%);
+            @include transicao;
+            padding: 0.31em 0.62em 0.31em 0.62em;
+            &>a {
+                cursor: pointer;
+                font-size: 0.9em;
+                &>i {
+                    font-size: 0.9em;
+                }
+            }
+            &:hover {
+                background-color: lighten($cinza, 14%);
+                &>a>i {
+                    @include transicao;
+                    color: $azul;
+                }
+            }
+            &.selecionado {
+                border: solid 1px lighten($preto, 90%);
+                border-bottom: none;
+                color: $azul;
+                &>a>i {
+                    color: $azul;
+                    font-size: 0.9em
+                }
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}

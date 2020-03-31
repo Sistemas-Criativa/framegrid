@@ -1,0 +1,188 @@
+$largura-container: 1400;
+$colunas: 18;
+%overflow {
+    overflow: hidden;
+}
+
+
+/*define largura do container e seu comportamento*/
+
+.container {
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+
+/*define a linha de container no modo flex para floar centralizado*/
+
+.linha-container {
+    display: flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.container-sem-quebra {
+    display: flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+}
+
+
+/*define alinhamento da grid no modo flex*/
+
+.linha-centro {
+    align-items: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+}
+
+
+/*define alinhamento da grid no modo flex*/
+
+.linha-esquerdo {
+    align-items: left;
+    -webkit-align-items: left;
+    -moz-align-items: left;
+    justify-content: left;
+    -webkit-justify-content: left;
+    -moz-justify-content: left;
+}
+
+
+/*define alinhamento da grid no modo flex*/
+
+.linha-direito {
+    align-items: right;
+    -webkit-align-items: right;
+    -moz-align-items: right;
+    justify-content: right;
+    -webkit-justify-content: right;
+    -moz-justify-content: right;
+    -webkit-flex-direction: row-reverse;
+    -moz-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+
+
+/*define alinhamento da grid no modo flex*/
+
+.grid-esticada {
+    align-items: stretch;
+    -webkit-align-items: stretch;
+    -moz-align-items: stretch;
+}
+
+
+/*define alinhamento total para a linhax*/
+
+.linha {
+    max-width: $largura-container+px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.sem-overflow {
+    overflow: visible !important;
+}
+
+
+/*gera o tamanho da grid no pc com tela grande*/
+
+@mixin grid-pc($largura-container) {
+    $multiplicador: 1.3;
+    @for $i from 1 through $colunas {
+        $largura: $largura-container / $colunas * $i;
+        .coluna-#{$i} {
+            width: 100 / $colunas * $i * 1%;
+            max-width: $largura+px;
+        }
+    }
+    body {
+        font-size: $tamanho-fonte * $multiplicador
+    }
+    .ocultar-pc {
+        display: none !important
+    }
+}
+
+
+/*gera o tamanho da grid no tablet */
+
+
+/*lista de colunas do grid*/
+
+@mixin grid-tablet($largura-container) {
+    $multiplicador: 1.1;
+    @for $i from 1 through $colunas {
+        $largura: $largura-container / $colunas * $i;
+        .coluna-#{$i} {
+            width: 100 / $colunas * $i * 1%;
+            max-width: $largura+px;
+        }
+    }
+    body {
+        font-size: $tamanho-fonte * $multiplicador
+    }
+    .ocultar-tablet {
+        display: none !important
+    }
+}
+
+
+/*gera o tamanho da grid no pc com tela pequena*/
+
+
+/*lista de colunas do grid*/
+
+@mixin grid-pcpequeno($largura-container) {
+    $multiplicador: 1.2;
+    @for $i from 1 through $colunas {
+        $largura: $largura-container / $colunas * $i;
+        .coluna-#{$i} {
+            width: 100 / $colunas * $i * 1%;
+            max-width: $largura+px;
+        }
+    }
+    body {
+        font-size: $tamanho-fonte * $multiplicador
+    }
+    .ocultar-pc-pequeno {
+        display: none !important
+    }
+}
+
+
+/*gera o tamanho da grid no celular*/
+
+
+/*lista de colunas do grid*/
+
+@mixin grid-mobile($largura-container) {
+    $multiplicador: 1;
+    @for $i from 1 through $colunas {
+        .coluna-#{$i} {
+            width: 10%;
+            max-width: $largura-container+px;
+        }
+    }
+    body {
+        font-size: $tamanho-fonte * $multiplicador;
+        min-width: $largura-container+px;
+    }
+    .ocultar-mobile {
+        display: none !important
+    }
+}
+
+.separador-de-bloco {
+    border: solid 1px $azul;
+}

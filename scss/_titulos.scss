@@ -1,0 +1,9 @@
+/*subtitulos*/
+
+@for $i from 1 through 5 {
+    .subtitulo-#{$i} {
+        $tamanho: 0.9 - $i/10;
+        font-size: $tamanho + em;
+        display: block;
+    }
+}

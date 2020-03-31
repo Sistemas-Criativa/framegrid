@@ -1,0 +1,43 @@
+/*tamanhos de margin*/
+
+@for $i from 0 through 20 {
+    .margin-#{$i} {
+        margin: $i+px;
+    }
+}
+
+
+/*tamanhos de margin top*/
+
+@for $i from 0 through 20 {
+    .margin-top-#{$i} {
+        margin-top: $i+px;
+    }
+}
+
+
+/*tamanhos de margin top*/
+
+@for $i from 0 through 20 {
+    .margin-bottom-#{$i} {
+        margin-bottom: $i+px;
+    }
+}
+
+
+/*tamanhos de margin left*/
+
+@for $i from 0 through 20 {
+    .margin-left-#{$i} {
+        margin-left: $i+px;
+    }
+}
+
+
+/*tamanhos de margin right*/
+
+@for $i from 0 through 20 {
+    .margin-right-#{$i} {
+        margin-right: $i+px;
+    }
+}

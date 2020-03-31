@@ -1,0 +1,189 @@
+/*tamanhos diferentes de botoes*/
+
+@mixin tamanho-botao($tamanho) {
+    @if $tamanho=="grande" {
+        .btn-grande {
+            font-size: 2em;
+            padding: 10px 20px 10px 20px !important;
+            border: solid 2px;
+        }
+    }
+    @else if $tamanho=="medio" {
+        .btn-medio {
+            font-size: 1.5em;
+            padding: 5px 10px 5px 10px !important;
+            border: solid 2px;
+        }
+    }
+    @else {
+        .btn-pequeno {
+            font-size: 0.7em;
+            padding: 2px 4px 2px 4px !important;
+            border: solid 1px;
+        }
+    }
+}
+
+.btn {
+    display: block;
+    width: auto;
+    font-family: $fonte;
+    text-decoration: none;
+}
+
+@include tamanho-botao("grande");
+@include tamanho-botao("medio");
+@include tamanho-botao("pequeno");
+
+/*botoes nomeados*/
+
+.btn-primario {
+    @include bcor($azul, "n");
+    @include cor($branco, "n", "!important");
+    padding: $padding-botoes;
+    border: solid $azul !important;
+    &:hover {
+        @include bcor($azul, "e");
+    }
+    &:disabled {
+        @include bcor($azul, "c");
+        cursor: not-allowed;
+    }
+}
+
+.btn-secundario {
+    @include bcor($branco, "n");
+    @include cor($preto, "n", "!important");
+    padding: $padding-botoes;
+    border: solid $preto !important;
+    &:hover {
+        @include bcor($cinza, "n");
+    }
+    &:disabled {
+        @include bcor($cinza, "c");
+        cursor: not-allowed;
+    }
+}
+
+.btn-ok {
+    @include bcor($verde, "n");
+    @include cor($branco, "n", "!important");
+    padding: $padding-botoes;
+    border: solid $verde !important;
+    &:hover {
+        @include bcor($verde, "e");
+    }
+    &:disabled {
+        @include bcor($verde, "c");
+        cursor: not-allowed;
+    }
+}
+
+.btn-cancelar {
+    @include bcor($vermelho, "n");
+    @include cor($branco, "n", "!important");
+    padding: $padding-botoes;
+    border: solid $vermelho !important;
+    &:hover {
+        @include bcor($vermelho, "e");
+    }
+    &:disabled {
+        @include bcor($vermelho, "c");
+        cursor: not-allowed;
+    }
+}
+
+.btn-informacao {
+    @include bcor($ciano, "n");
+    @include cor($branco, "n", "!important");
+    padding: $padding-botoes;
+    border: solid $ciano !important;
+    &:hover {
+        @include bcor($ciano, "e");
+    }
+    &:disabled {
+        @include bcor($ciano, "c");
+        cursor: not-allowed;
+    }
+}
+
+.btn-cuidado {
+    @include bcor($laranja, "n");
+    @include cor($branco, "n", "!important");
+    padding: $padding-botoes;
+    border: solid $laranja !important;
+    &:hover {
+        @include bcor($laranja, "e");
+    }
+    &:disabled {
+        @include bcor($laranja, "c");
+        cursor: not-allowed;
+    }
+}
+
+
+/*botao em bloco 100%*/
+
+.btn-bloco {
+    display: block;
+    width: 100%;
+}
+
+.botao-alternado {
+    position: relative;
+    padding: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    @include transicao;
+    & .texto-botao,
+    .icone-botao {
+        position: relative;
+        display: inline-block;
+    }
+    &:hover>.icone-botao {
+        left: 6%;
+        @include transicao;
+    }
+    &:hover>.texto-botao {
+        left: -5px;
+        @include transicao;
+    }
+    & .icone-botao {
+        @include transicao;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    & .texto-botao {
+        @include transicao;
+        left: 100%;
+    }
+}
+
+.botao-sim-nao {
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+    &>a {
+        padding: 5px 20px;
+        cursor: pointer
+    }
+    & :first-child {
+        border-radius: 3px 0px 0px 3px;
+    }
+    & :last-child {
+        border-radius: 0px 3px 3px 0px;
+    }
+    &>span {
+        position: absolute;
+        background-color: $branco;
+        border-radius: 50%;
+        padding: 3px;
+        font-size: 0.6em;
+        font-weight: bold;
+        left: 40%;
+        top: 21%;
+    }
+}

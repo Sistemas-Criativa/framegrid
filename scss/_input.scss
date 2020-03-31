@@ -1,0 +1,175 @@
+/*formatacao de inputs*/
+
+input,
+select,
+textarea {
+    padding: 10px;
+}
+
+input[type=radio],
+input[type=checkbox] {
+    display: none
+}
+
+input,
+select,
+textarea,
+input[type=text],
+input[type=reset],
+input[type=button],
+input[type=submit],
+input[type=password],
+input[type=number],
+input[type=search],
+input[type=email] {
+    font-family: "Segoe UI Light", Arial, Helvetica;
+    min-height: 20px;
+}
+
+
+/*padrão para botoes*/
+
+input[type=submit],
+input[type=button],
+input[type=reset] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    min-height: 30px;
+    border-radius: 0;
+    border: solid 1px;
+    @include bcor($azul, "n");
+    @include cor($branco, "n");
+    padding: $padding-botoes;
+    min-height: 30px;
+    transition: all 350ms;
+    &:hover {
+        @include bcor($azul, "e");
+    }
+}
+
+%checkbox {
+    background-color: lighten($azul, 50%);
+}
+
+%checkboxmarcado {
+    background-color: $azul;
+}
+
+%radio {
+    background-color: lighten($azul, 50%);
+}
+
+%radiomarcado {
+    background-color: $azul;
+}
+
+
+/*padrao para caixas de checagem*/
+
+input[type=checkbox] {
+    width: $tamanho-fonte+2;
+    height: $tamanho-fonte+2;
+    content: " ";
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    border: 3px solid #fff;
+    visibility: visible;
+    box-shadow: 0 0 0px 2px $azul;
+    cursor: pointer;
+    opacity: 0;
+    &+.objeto-form:before {
+        @extend %checkbox;
+    }
+    &:checked+.objeto-form:before {
+        @extend %checkboxmarcado;
+    }
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
+
+/*padrao para radios*/
+
+input[type=radio] {
+    width: $tamanho-fonte+2;
+    height: $tamanho-fonte+2;
+    cursor: pointer;
+    opacity: 0;
+    content: " ";
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    visibility: visible;
+    box-shadow: 0 0 0px 2px $azul;
+    &+.objeto-form:before {
+        @extend %radio;
+    }
+    &:checked+.objeto-form:before {
+        @extend %radiomarcado;
+    }
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
+
+/*padrao para caixas de texto*/
+
+input[type=text],
+input[type=number],
+input[type=email],
+input[type=password],
+textarea,
+select {
+    padding: $padding-botoes;
+    border: solid 2px $azul;
+    transition: all 350ms;
+    min-height: 30px;
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
+select {
+    background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ljk1IDEwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9LmNscy0ye2ZpbGw6IzQ0NDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmFycm93czwvdGl0bGU+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iNC45NSIgaGVpZ2h0PSIxMCIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxLjQxIDQuNjcgMi40OCAzLjE4IDMuNTQgNC42NyAxLjQxIDQuNjciLz48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMy41NCA1LjMzIDIuNDggNi44MiAxLjQxIDUuMzMgMy41NCA1LjMzIi8+PC9zdmc+) no-repeat 98% 50%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    /* and then whatever styles you want*/
+    min-height: 30px;
+    width: 100px;
+    padding: 5px;
+    background-color: #fff
+}
+
+
+/*grupo de formulario*/
+
+.grupo-formulario {
+    display: flex;
+    -webkit-display: flex;
+    -moz-display: flex;
+    &>input {
+        width: 100%;
+        border: solid 1px $cinza;
+        border-radius: 0px;
+    }
+}
+
+
+/*descricao de campo input*/
+
+.descricao-campo {
+    white-space: nowrap;
+    background-color: lighten($cinza, 3%);
+    border: solid 1px $cinza;
+    color: darken($cinza, 60%);
+    padding: 8px;
+}

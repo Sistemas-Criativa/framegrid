@@ -1,0 +1,129 @@
+$fonte: "Segoe UI Light",
+Arial,
+Helvetica;
+$tamanho-fonte: 16px;
+$altura-linha: 1.5px;
+$margem: 0px;
+$padding: 0px;
+$box: border-box;
+$padding-botoes: 5px 10px 5px 10px;
+
+/*padrão para pagina e itens*/
+
+* {
+    margin: $margem;
+    padding: $padding;
+    box-sizing: $box;
+}
+
+body {
+    font-family: $fonte;
+    font-size: $tamanho-fonte;
+}
+
+
+/*larguras*/
+
+@for $i from 1 through 10 {
+    .largura-#{$i}0 {
+        width: $i * 10 * 1%
+    }
+}
+
+
+/*alturas*/
+
+@for $i from 1 through 10 {
+    .altura-#{$i}0 {
+        height: $i * 10 * 1%
+    }
+}
+
+
+/*tamanhos diferentes para itens genericos*/
+
+@mixin tamanho($tamanho) {
+    @if $tamanho=="grande" {
+        .grande {
+            font-size: $tamanho-fonte + 20px;
+            padding: 10px;
+        }
+    }
+    @else if $tamanho=="medio" {
+        .medio {
+            font-size: $tamanho-fonte + 10px;
+            padding: 5px;
+        }
+    }
+    @else {
+        .pequeno {
+            font-size: $tamanho-fonte;
+            padding: 2px;
+        }
+    }
+}
+
+@include tamanho("grande");
+@include tamanho("medio");
+@include tamanho("pequeno");
+.clear::after,
+.clear::before {
+    content: ' ';
+    display: table;
+    clear: both;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clicavel {
+    cursor: pointer;
+}
+
+.sublinhado {
+    text-decoration: underline;
+}
+
+@mixin transicao() {
+    transition: all 350ms;
+}
+
+.display-block {
+    display: block;
+}
+
+.display-table {
+    display: table
+}
+
+.display-inline-block {
+    display: inline-block;
+}
+
+.posicao-relativa {
+    position: relative;
+}
+
+.posicao-absoluta {
+    position: absolute;
+}
+
+.posicao-fixa {
+    position: fixed;
+}
+
+abbr {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    cursor: help;
+}
