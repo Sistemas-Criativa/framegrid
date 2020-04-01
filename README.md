@@ -1,5 +1,5 @@
 # Framegrid
-Framework HTML para desenvolvimento de aplicações responsívas
+Framework HTML para desenvolvimento de aplicações responsívas, pequeno e sem uso de JavaScript
 
 #Documentação do projeto
 
