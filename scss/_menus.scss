@@ -1,11 +1,13 @@
-.menu-lateral {
+/*lateral menu*/
+
+.lateral-menu {
     position: relative;
     border: solid 1px;
     font-size: 1em;
     &>p {
         font-size: 1.3em;
         padding: 5px;
-        background-color: lighten($cinza, 14%);
+        background-color: lighten($gray, 14%);
         border-bottom: solid 1px #ccc;
     }
     &>ul {
@@ -20,23 +22,23 @@
                 display: block;
                 padding: 5px;
                 font-size: 0.8em;
-                @include transicao;
+                @include transition;
                 &:hover {
-                    background-color: lighten($cinza, 14%);
-                    @include transicao;
+                    background-color: lighten($gray, 14%);
+                    @include transition;
                 }
                 &:hover>i {
-                    color: $azul;
-                    @include transicao;
+                    color: $blue;
+                    @include transition;
                 }
                 &>i {
                     font-size: 0.9em
                 }
             }
-            &.selecionado {
-                border-left: solid 1px $azul;
+            &.selected {
+                border-left: solid 1px $blue;
                 &>a>i {
-                    color: $azul;
+                    color: $blue;
                     font-size: 0.9em
                 }
             }
@@ -44,7 +46,10 @@
     }
 }
 
-.abas {
+
+/* tabs */
+
+.tabs {
     position: relative;
     &>ul {
         display: table;
@@ -52,8 +57,8 @@
         &>li {
             display: inline-block;
             float: left;
-            border-bottom: solid 1px lighten($preto, 90%);
-            @include transicao;
+            border-bottom: solid 1px lighten($black, 90%);
+            @include transition;
             padding: 0.31em 0.62em 0.31em 0.62em;
             &>a {
                 cursor: pointer;
@@ -63,18 +68,18 @@
                 }
             }
             &:hover {
-                background-color: lighten($cinza, 14%);
+                background-color: lighten($gray, 14%);
                 &>a>i {
-                    @include transicao;
-                    color: $azul;
+                    @include transition;
+                    color: $blue;
                 }
             }
-            &.selecionado {
-                border: solid 1px lighten($preto, 90%);
+            &.selected {
+                border: solid 1px lighten($black, 90%);
                 border-bottom: none;
-                color: $azul;
+                color: $blue;
                 &>a>i {
-                    color: $azul;
+                    color: $blue;
                     font-size: 0.9em
                 }
                 &:hover {

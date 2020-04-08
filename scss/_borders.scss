@@ -1,0 +1,155 @@
+/*size of borders*/
+
+@for $i from 1 through 10 {
+    .border-#{$i} {
+        border: solid $i+px;
+    }
+}
+
+
+/*rounded corners*/
+
+@for $i from 1 through 20 {
+    .border-radius-#{$i} {
+        border-radius: $i+px;
+        -webkit-border-radius: $i+px;
+        -moz-border-radius: $i+px;
+    }
+}
+
+
+/*borders */
+
+@for $i from 1 through 10 {
+    .border-#{$i} {
+        border: solid $i+px;
+    }
+}
+
+
+/*border color*/
+
+
+/*grayscale border*/
+
+@for $i from 1 through 9 {
+    .border-gray-#{$i}0 {
+        border-color: darken($white, $i*10) !important;
+    }
+}
+
+.border-black {
+    border-color: $black !important;
+}
+
+.border-white {
+    border-color: $white !important;
+}
+
+.border-red {
+    @include bordercolor($red, "n", "!important");
+}
+
+.border-blue {
+    @include bordercolor($blue, "n", "!important");
+}
+
+.border-green {
+    @include bordercolor($green, "n", "!important");
+}
+
+.border-yellow {
+    @include bordercolor($yellow, "n", "!important");
+}
+
+.border-orange {
+    @include bordercolor($orange, "n", "!important");
+}
+
+.border-purple {
+    @include bordercolor($purple, "n", "!important");
+}
+
+.border-turquoise {
+    @include bordercolor($turquoise, "n", "!important");
+}
+
+.border-asfalt {
+    @include bordercolor($asfalt, "n", "!important");
+}
+
+.border-cyan {
+    @include bordercolor($cyan, "n", "!important");
+}
+
+.border-red-light {
+    @include bordercolor($red, "c", "!important");
+}
+
+.border-blue-light {
+    @include bordercolor($blue, "c", "!important");
+}
+
+.border-green-light {
+    @include bordercolor($green, "c", "!important");
+}
+
+.border-yellow-light {
+    @include bordercolor($yellow, "c", "!important");
+}
+
+.border-orange-light {
+    @include bordercolor($orange, "c", "!important");
+}
+
+.border-purple-light {
+    @include bordercolor($purple, "c", "!important");
+}
+
+.border-turquoise-light {
+    @include bordercolor($turquoise, "c", "!important");
+}
+
+.border-asfalt-light {
+    @include bordercolor($asfalt, "c", "!important");
+}
+
+.border-cyan-light {
+    @include bordercolor($cyan, "c", "!important");
+}
+
+.border-red-dark {
+    @include bordercolor($red, "e", "!important");
+}
+
+.border-blue-dark {
+    @include bordercolor($blue, "e", "!important");
+}
+
+.border-green-dark {
+    @include bordercolor($green, "e", "!important");
+}
+
+.border-yellow-dark {
+    @include bordercolor($yellow, "e", "!important");
+}
+
+.border-orange-dark {
+    @include bordercolor($orange, "e", "!important");
+}
+
+.border-purple-dark {
+    @include bordercolor($purple, "e", "!important");
+}
+
+.border-turquoise-dark {
+    @include bordercolor($turquoise, "e", "!important");
+}
+
+.border-asfalt-dark {
+    @include bordercolor($asfalt, "e", "!important");
+}
+
+.border-cyan-dark {
+    @include bordercolor($cyan, "e", "!important");
+}

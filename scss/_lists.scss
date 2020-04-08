@@ -1,8 +1,8 @@
 /*lista padrao*/
 
-.lista-em-grupo,
-.lista-em-linha,
-.lista-cascata {
+.group-list,
+.inline-list,
+.cascade-list {
     list-style: none;
 }
 
@@ -13,14 +13,14 @@
 
 /*lista alternada*/
 
-.alternada>li:nth-child(2n) {
-    background-color: lighten($cinza, 12%);
+.alternate>li:nth-child(2n) {
+    background-color: lighten($gray, 12%);
 }
 
 
 /*menu cascata*/
 
-.lista-cascata {
+.cascade-list {
     position: relative;
     width: auto;
     &>li {
@@ -37,12 +37,12 @@
         padding: $padding-botoes;
         text-decoration: none;
         transition: all 350ms;
-        color: $preto;
+        color: $black;
     }
     &>li>a:hover,
     &>li:hover>a {
-        background-color: $azul;
-        color: $branco;
+        background-color: $blue;
+        color: $white;
     }
     &>li>ul {
         display: none;
@@ -70,8 +70,8 @@
         padding: 10px;
         text-decoration: none;
         font-size: 0.8em;
-        background-color: lighten($cinza, 3%);
-        color: $preto;
+        background-color: lighten($gray, 3%);
+        color: $black;
     }
     &>li>ul>li:hover>ul>li>a:link,
     &>li>ul>li:hover>ul>li>a:visited {
@@ -79,29 +79,29 @@
         padding: 10px;
         text-decoration: none;
         font-size: 1em;
-        background-color: lighten($cinza, 3%);
-        color: $preto;
+        background-color: lighten($gray, 3%);
+        color: $black;
     }
     &>li:hover>ul>li>a:hover {
-        background-color: lighten($cinza, 1%);
-        color: $preto;
+        background-color: lighten($gray, 1%);
+        color: $black;
     }
 }
 
 
-/*separador de menu*/
+/*menu separator*/
 
-.separador {
+.separator {
     display: block;
     margin: auto;
     width: 100%;
-    border-bottom: solid 1px $azul;
+    border-bottom: solid 1px $blue;
 }
 
 
 /*Breadcrumb*/
 
-.navegacao {
+.breadcrumb {
     display: inline-block;
     list-style: none;
     & li {

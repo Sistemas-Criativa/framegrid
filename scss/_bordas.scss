@@ -1,7 +1,0 @@
-/*largura das bordas*/
-
-@for $i from 1 through 10 {
-    .borda-#{$i} {
-        border: solid $i+px;
-    }
-}

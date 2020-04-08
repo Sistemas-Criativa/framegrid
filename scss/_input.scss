@@ -1,4 +1,4 @@
-/*formatacao de inputs*/
+/*inputs*/
 
 input,
 select,
@@ -24,10 +24,11 @@ input[type=search],
 input[type=email] {
     font-family: "Segoe UI Light", Arial, Helvetica;
     min-height: 20px;
+    border: solid 1px
 }
 
 
-/*padrão para botoes*/
+/*buttons*/
 
 input[type=submit],
 input[type=button],
@@ -38,34 +39,34 @@ input[type=reset] {
     min-height: 30px;
     border-radius: 0;
     border: solid 1px;
-    @include bcor($azul, "n");
-    @include cor($branco, "n");
+    @include bcolor($blue, "n");
+    @include color($white, "n");
     padding: $padding-botoes;
     min-height: 30px;
     transition: all 350ms;
     &:hover {
-        @include bcor($azul, "e");
+        @include bcolor($blue, "e");
     }
 }
 
 %checkbox {
-    background-color: lighten($azul, 50%);
+    background-color: lighten($blue, 50%);
 }
 
-%checkboxmarcado {
-    background-color: $azul;
+%checkedcheckbox {
+    background-color: $blue;
 }
 
 %radio {
-    background-color: lighten($azul, 50%);
+    background-color: lighten($blue, 50%);
 }
 
-%radiomarcado {
-    background-color: $azul;
+%checkedradio {
+    background-color: $blue;
 }
 
 
-/*padrao para caixas de checagem*/
+/*checkboxes*/
 
 input[type=checkbox] {
     width: $tamanho-fonte+2;
@@ -76,14 +77,14 @@ input[type=checkbox] {
     height: 0.5em;
     border: 3px solid #fff;
     visibility: visible;
-    box-shadow: 0 0 0px 2px $azul;
+    box-shadow: 0 0 0px 2px $blue;
     cursor: pointer;
     opacity: 0;
     &+.objeto-form:before {
         @extend %checkbox;
     }
     &:checked+.objeto-form:before {
-        @extend %checkboxmarcado;
+        @extend %checkedcheckbox;
     }
     &:disabled {
         cursor: not-allowed;
@@ -91,7 +92,7 @@ input[type=checkbox] {
 }
 
 
-/*padrao para radios*/
+/*radios*/
 
 input[type=radio] {
     width: $tamanho-fonte+2;
@@ -107,12 +108,12 @@ input[type=radio] {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     visibility: visible;
-    box-shadow: 0 0 0px 2px $azul;
+    box-shadow: 0 0 0px 2px $blue;
     &+.objeto-form:before {
         @extend %radio;
     }
     &:checked+.objeto-form:before {
-        @extend %radiomarcado;
+        @extend %checkedradio;
     }
     &:disabled {
         cursor: not-allowed;
@@ -120,7 +121,7 @@ input[type=radio] {
 }
 
 
-/*padrao para caixas de texto*/
+/*textboxes*/
 
 input[type=text],
 input[type=number],
@@ -129,7 +130,7 @@ input[type=password],
 textarea,
 select {
     padding: $padding-botoes;
-    border: solid 2px $azul;
+    border: solid 1px $blue;
     transition: all 350ms;
     min-height: 30px;
     &:disabled {
@@ -150,26 +151,26 @@ select {
 }
 
 
-/*grupo de formulario*/
+/*form group*/
 
-.grupo-formulario {
+.form-group {
     display: flex;
     -webkit-display: flex;
     -moz-display: flex;
     &>input {
         width: 100%;
-        border: solid 1px $cinza;
+        border: solid 1px $gray;
         border-radius: 0px;
     }
 }
 
 
-/*descricao de campo input*/
+/*input description*/
 
-.descricao-campo {
+.form-description {
     white-space: nowrap;
-    background-color: lighten($cinza, 3%);
-    border: solid 1px $cinza;
-    color: darken($cinza, 60%);
+    background-color: lighten($gray, 3%);
+    border: solid 1px $gray;
+    color: darken($gray, 60%);
     padding: 8px;
 }

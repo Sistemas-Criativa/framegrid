@@ -1,14 +1,14 @@
-$fonte: "Segoe UI Light",
+$fonte: "Segoe UI",
 Arial,
 Helvetica;
 $tamanho-fonte: 16px;
-$altura-linha: 1.5px;
+$altura-linha: 1.4em;
 $margem: 0px;
 $padding: 0px;
 $box: border-box;
 $padding-botoes: 5px 10px 5px 10px;
 
-/*padrão para pagina e itens*/
+/*default itens*/
 
 * {
     margin: $margem;
@@ -22,50 +22,23 @@ body {
 }
 
 
-/*larguras*/
+/*widths*/
 
 @for $i from 1 through 10 {
-    .largura-#{$i}0 {
+    .width-#{$i}0 {
         width: $i * 10 * 1%
     }
 }
 
 
-/*alturas*/
+/*heights*/
 
 @for $i from 1 through 10 {
-    .altura-#{$i}0 {
+    .height-#{$i}0 {
         height: $i * 10 * 1%
     }
 }
 
-
-/*tamanhos diferentes para itens genericos*/
-
-@mixin tamanho($tamanho) {
-    @if $tamanho=="grande" {
-        .grande {
-            font-size: $tamanho-fonte + 20px;
-            padding: 10px;
-        }
-    }
-    @else if $tamanho=="medio" {
-        .medio {
-            font-size: $tamanho-fonte + 10px;
-            padding: 5px;
-        }
-    }
-    @else {
-        .pequeno {
-            font-size: $tamanho-fonte;
-            padding: 2px;
-        }
-    }
-}
-
-@include tamanho("grande");
-@include tamanho("medio");
-@include tamanho("pequeno");
 .clear::after,
 .clear::before {
     content: ' ';
@@ -86,15 +59,15 @@ a {
     text-decoration: none;
 }
 
-.clicavel {
+.click {
     cursor: pointer;
 }
 
-.sublinhado {
+.underline {
     text-decoration: underline;
 }
 
-@mixin transicao() {
+@mixin transition() {
     transition: all 350ms;
 }
 
@@ -110,15 +83,15 @@ a {
     display: inline-block;
 }
 
-.posicao-relativa {
+.relative {
     position: relative;
 }
 
-.posicao-absoluta {
+.absolute {
     position: absolute;
 }
 
-.posicao-fixa {
+.fixed {
     position: fixed;
 }
 

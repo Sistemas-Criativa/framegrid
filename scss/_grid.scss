@@ -1,11 +1,11 @@
-$largura-container: 1400;
-$colunas: 18;
+$width-container: 1400;
+$cols: 18;
 %overflow {
     overflow: hidden;
 }
 
 
-/*define largura do container e seu comportamento*/
+/*container width*/
 
 .container {
     width: 100%;
@@ -14,9 +14,9 @@ $colunas: 18;
 }
 
 
-/*define a linha de container no modo flex para floar centralizado*/
+/*row container*/
 
-.linha-container {
+.row-container {
     display: flex;
     flex-direction: row;
     -webkit-flex-direction: row;
@@ -26,7 +26,10 @@ $colunas: 18;
     flex-wrap: wrap;
 }
 
-.container-sem-quebra {
+
+/* container with no wrap*/
+
+.container-nowrap {
     display: flex;
     flex-direction: row;
     -webkit-flex-direction: row;
@@ -34,9 +37,9 @@ $colunas: 18;
 }
 
 
-/*define alinhamento da grid no modo flex*/
+/*align of grid row*/
 
-.linha-centro {
+.row-center {
     align-items: center;
     -webkit-align-items: center;
     -moz-align-items: center;
@@ -46,9 +49,9 @@ $colunas: 18;
 }
 
 
-/*define alinhamento da grid no modo flex*/
+/*left row*/
 
-.linha-esquerdo {
+.row-left {
     align-items: left;
     -webkit-align-items: left;
     -moz-align-items: left;
@@ -58,9 +61,9 @@ $colunas: 18;
 }
 
 
-/*define alinhamento da grid no modo flex*/
+/*right row*/
 
-.linha-direito {
+.row-right {
     align-items: right;
     -webkit-align-items: right;
     -moz-align-items: right;
@@ -73,116 +76,95 @@ $colunas: 18;
 }
 
 
-/*define alinhamento da grid no modo flex*/
+/*stretched row*/
 
-.grid-esticada {
+.stretch {
     align-items: stretch;
     -webkit-align-items: stretch;
     -moz-align-items: stretch;
 }
 
 
-/*define alinhamento total para a linhax*/
+/*row*/
 
-.linha {
-    max-width: $largura-container+px;
+.row {
+    max-width: $width-container+px;
     margin: auto;
     overflow: hidden;
 }
 
-.sem-overflow {
+
+/*remove overflow*/
+
+.no-overflow {
     overflow: visible !important;
 }
 
 
-/*gera o tamanho da grid no pc com tela grande*/
+/* mixin for widths*/
 
-@mixin grid-pc($largura-container) {
+@mixin widths($width-container, $prefix:"") {
+    @for $i from 1 through $cols {
+        $largura: $width-container / $cols * $i;
+        .col#{$prefix}-#{$i} {
+            width: 100 / $cols * $i * 1%;
+            max-width: $largura+px;
+        }
+    }
+}
+
+@include widths($width-container);
+
+/*grid*/
+
+@mixin normal($width-container) {
     $multiplicador: 1.3;
-    @for $i from 1 through $colunas {
-        $largura: $largura-container / $colunas * $i;
-        .coluna-#{$i} {
-            width: 100 / $colunas * $i * 1%;
-            max-width: $largura+px;
-        }
-    }
     body {
         font-size: $tamanho-fonte * $multiplicador
     }
-    .ocultar-pc {
+    .hidden {
         display: none !important
     }
 }
 
 
-/*gera o tamanho da grid no tablet */
+/*pc grid*/
 
-
-/*lista de colunas do grid*/
-
-@mixin grid-tablet($largura-container) {
-    $multiplicador: 1.1;
-    @for $i from 1 through $colunas {
-        $largura: $largura-container / $colunas * $i;
-        .coluna-#{$i} {
-            width: 100 / $colunas * $i * 1%;
-            max-width: $largura+px;
-        }
-    }
-    body {
-        font-size: $tamanho-fonte * $multiplicador
-    }
-    .ocultar-tablet {
-        display: none !important
-    }
-}
-
-
-/*gera o tamanho da grid no pc com tela pequena*/
-
-
-/*lista de colunas do grid*/
-
-@mixin grid-pcpequeno($largura-container) {
+@mixin pc($width-container) {
     $multiplicador: 1.2;
-    @for $i from 1 through $colunas {
-        $largura: $largura-container / $colunas * $i;
-        .coluna-#{$i} {
-            width: 100 / $colunas * $i * 1%;
-            max-width: $largura+px;
-        }
-    }
+    @include widths($width-container, "-pc");
     body {
         font-size: $tamanho-fonte * $multiplicador
     }
-    .ocultar-pc-pequeno {
+    .hidden-pc {
         display: none !important
     }
 }
 
 
-/*gera o tamanho da grid no celular*/
+/*tablet grid*/
 
-
-/*lista de colunas do grid*/
-
-@mixin grid-mobile($largura-container) {
-    $multiplicador: 1;
-    @for $i from 1 through $colunas {
-        .coluna-#{$i} {
-            width: 10%;
-            max-width: $largura-container+px;
-        }
+@mixin tablet($width-container) {
+    $multiplicador: 1.1;
+    @include widths($width-container, "-tablet");
+    body {
+        font-size: $tamanho-fonte * $multiplicador
     }
+    .hidden-tablet {
+        display: none !important
+    }
+}
+
+
+/*mobile grid*/
+
+@mixin mobile($width-container) {
+    $multiplicador: 1;
+    @include widths($width-container, "-celular");
     body {
         font-size: $tamanho-fonte * $multiplicador;
-        min-width: $largura-container+px;
     }
-    .ocultar-mobile {
+    .hidden-mobile {
         display: none !important
     }
-}
-
-.separador-de-bloco {
-    border: solid 1px $azul;
 }

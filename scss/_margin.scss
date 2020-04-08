@@ -1,4 +1,4 @@
-/*tamanhos de margin*/
+/*size of margin*/
 
 @for $i from 0 through 20 {
     .margin-#{$i} {
@@ -7,7 +7,7 @@
 }
 
 
-/*tamanhos de margin top*/
+/*size of margin top*/
 
 @for $i from 0 through 20 {
     .margin-top-#{$i} {
@@ -16,7 +16,7 @@
 }
 
 
-/*tamanhos de margin top*/
+/*size of margin top*/
 
 @for $i from 0 through 20 {
     .margin-bottom-#{$i} {
@@ -25,7 +25,7 @@
 }
 
 
-/*tamanhos de margin left*/
+/*size of margin left*/
 
 @for $i from 0 through 20 {
     .margin-left-#{$i} {
@@ -34,7 +34,7 @@
 }
 
 
-/*tamanhos de margin right*/
+/*size of margin right*/
 
 @for $i from 0 through 20 {
     .margin-right-#{$i} {

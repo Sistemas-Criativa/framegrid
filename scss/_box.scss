@@ -1,0 +1,75 @@
+/*box*/
+
+.box {
+    border: solid 1px;
+    position: relative;
+    padding: 0.31em;
+}
+
+
+/*quotes*/
+
+.quote,
+blockquote {
+    border: none;
+    border-left: solid 3px;
+    font-style: italic;
+    padding: 5px;
+    font-size: 0.8em;
+    background-color: #f5f5f5
+}
+
+
+/*notifications*/
+
+.notification {
+    position: relative;
+    border: solid 1px;
+    /*notification title*/
+    & .notification-title {
+        width: 100%;
+        padding: 0.31em;
+        position: relative
+    }
+    & .close-notification {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        color: $white;
+        text-align: center;
+        vertical-align: middle;
+        padding: 5px;
+        cursor: pointer;
+        color: $white;
+        transition: all 350ms;
+        &:before {
+            font-family: "Arial", Verdana;
+            font-size: 0.8em;
+            content: 'X';
+            font-weight: bold;
+        }
+        &:hover {
+            color: darken($red, 25%);
+        }
+    }
+}
+
+
+/*example box*/
+
+.example {
+    position: relative;
+    margin-top: 25px;
+    padding: 5px;
+    background-color: lighten($black, 97%);
+    border: solid 1px $blue;
+    & .example-title {
+        position: absolute;
+        background-color: $blue;
+        color: $white;
+        padding: 3px 10px;
+        top: -25px;
+        left: -1px;
+        font-size: 14px;
+    }
+}

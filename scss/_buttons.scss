@@ -1,0 +1,189 @@
+/*tamanhos diferentes de botoes*/
+
+@mixin button-size($size) {
+    @if $size=="big" {
+        .btn-big {
+            font-size: 2em;
+            padding: 10px 20px 10px 20px !important;
+            border: solid 1px;
+        }
+    }
+    @else if $size=="mid" {
+        .btn-mid {
+            font-size: 1.5em;
+            padding: 5px 10px 5px 10px !important;
+            border: solid 1px;
+        }
+    }
+    @else {
+        .btn-small {
+            font-size: 0.7em;
+            padding: 2px 4px 2px 4px !important;
+            border: solid 1px;
+        }
+    }
+}
+
+.btn {
+    display: block;
+    width: auto;
+    font-family: $fonte;
+    text-decoration: none;
+}
+
+@include button-size("big");
+@include button-size("mid");
+@include button-size("small");
+
+/*botoes nomeados*/
+
+.btn-primary {
+    @include bcolor($blue, "n", 10%, "!important");
+    @include color($white, "n", "!important");
+    padding: $padding-botoes;
+    border: solid $blue;
+    &:hover {
+        @include bcolor($blue, "e", 10%, "!important");
+    }
+    &:disabled {
+        @include bcolor($blue, "c", 10%, "!important");
+        cursor: not-allowed;
+    }
+}
+
+.btn-secondary {
+    @include bcolor($white, "n", 10%, "!important");
+    @include color($black, "n", "!important");
+    padding: $padding-botoes;
+    border: solid $black;
+    &:hover {
+        @include bcolor($gray, "n", 10%, "!important");
+    }
+    &:disabled {
+        @include bcolor($gray, "c", 10%, "!important");
+        cursor: not-allowed;
+    }
+}
+
+.btn-ok {
+    @include bcolor($green, "n", 10%, "!important");
+    @include color($white, "n", "!important");
+    padding: $padding-botoes;
+    border: solid $green;
+    &:hover {
+        @include bcolor($green, "e", 10%, "!important");
+    }
+    &:disabled {
+        @include bcolor($green, "c", 10%, "!important");
+        cursor: not-allowed;
+    }
+}
+
+.btn-cancel {
+    @include bcolor($red, "n", 10%, "!important");
+    @include color($white, "n", "!important");
+    padding: $padding-botoes;
+    border: solid $red;
+    &:hover {
+        @include bcolor($red, "e", 10%, "!important");
+    }
+    &:disabled {
+        @include bcolor($red, "c", 10%, "!important");
+        cursor: not-allowed;
+    }
+}
+
+.btn-information {
+    @include bcolor($cyan, "n", 10%, "!important");
+    @include color($white, "n", "!important");
+    padding: $padding-botoes;
+    border: solid $cyan;
+    &:hover {
+        @include bcolor($cyan, "e", 10%, "!important");
+    }
+    &:disabled {
+        @include bcolor($cyan, "c", 10%, "!important");
+        cursor: not-allowed;
+    }
+}
+
+.btn-danger {
+    @include bcolor($orange, "n", 10%, "!important");
+    @include color($white, "n", "!important");
+    padding: $padding-botoes;
+    border: solid $orange;
+    &:hover {
+        @include bcolor($orange, "e", 10%, "!important");
+    }
+    &:disabled {
+        @include bcolor($orange, "c", 10%, "!important");
+        cursor: not-allowed;
+    }
+}
+
+
+/*botao em bloco 100%*/
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.btn-alternate {
+    position: relative;
+    padding: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    @include transition;
+    & .btn-text,
+    .btn-icon {
+        position: relative;
+        display: inline-block;
+    }
+    &:hover>.btn-icon {
+        left: 6%;
+        @include transition;
+    }
+    &:hover>.btn-text {
+        left: -5px;
+        @include transition;
+    }
+    & .btn-icon {
+        @include transition;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    & .btn-text {
+        @include transition;
+        left: 100%;
+    }
+}
+
+.btn-yes-no {
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+    &>a {
+        padding: 5px 20px;
+        cursor: pointer
+    }
+    & :first-child {
+        border-radius: 3px 0px 0px 3px;
+    }
+    & :last-child {
+        border-radius: 0px 3px 3px 0px;
+    }
+    &>span {
+        position: absolute;
+        background-color: $white;
+        border-radius: 50%;
+        padding: 3px;
+        font-size: 0.6em;
+        font-weight: bold;
+        left: 40%;
+        top: 21%;
+    }
+}

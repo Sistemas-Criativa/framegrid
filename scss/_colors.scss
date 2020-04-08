@@ -1,0 +1,766 @@
+$red: #d9534f;
+$blue: #0275d8;
+$green: #5cb85c;
+$yellow: #ff0;
+$black: #000;
+$white: #fff;
+$orange: #f39c12;
+$purple: #9b59b6;
+$turquoise: #1abc9c;
+$asfalt: #34495e;
+$gray: #ccc;
+$cyan: #5bc0de;
+$letter-color:#000;
+$button-color: #ccc;
+$button-letter-color: #999;
+
+/*grayscale*/
+
+@for $i from 1 through 9 {
+    .gray-#{$i}0 {
+        color: darken($white, $i*10);
+    }
+}
+
+
+/* grayscale background*/
+
+@for $i from 1 through 9 {
+    .b-gray-#{$i}0 {
+        background-color: darken($white, $i*10);
+    }
+}
+
+
+/*colors generator*/
+
+@mixin color($cor, $tipo, $importancia:"", $percentual:10%) {
+    @include transition();
+    @if $tipo=="e" {
+        color: darken($cor, $percentual) #{$importancia};
+    }
+    @else if $tipo=="n" {
+        color: $cor #{$importancia};
+    }
+    @else {
+        color: lighten($cor, $percentual) #{$importancia};
+    }
+}
+
+
+/*backgrounds generator*/
+
+@mixin bcolor($cor, $tipo, $percentual:10%, $importancia:"") {
+    @if $tipo=="e" {
+        background-color: darken($cor, $percentual) #{$importancia};
+    }
+    @else if $tipo=="n" {
+        background-color: $cor #{$importancia};
+    }
+    @else {
+        background-color: lighten($cor, $percentual) #{$importancia};
+    }
+}
+
+
+/*background with hover generator*/
+
+@mixin bcolorh($cor, $tipo, $percentual:10%, $importancia:"") {
+    @include transition();
+    @if $tipo=="e" {
+        background-color: darken($cor, $percentual) #{$importancia};
+    }
+    @else if $tipo=="n" {
+        background-color: $cor #{$importancia};
+    }
+    @else {
+        background-color: lighten($cor, $percentual) #{$importancia};
+    }
+    border-color: $cor
+}
+
+
+/*border-colorr*/
+
+@mixin bordercolor($cor, $tipo, $importancia:"") {
+    @include transition();
+    @if $tipo=="e" {
+        border-color: darken($cor, 10%) #{$importancia};
+    }
+    @else if $tipo=="n" {
+        border-color: $cor #{$importancia};
+    }
+    @else {
+        border-color: lighten($cor, 10%) #{$importancia};
+    }
+}
+
+
+/*colors*/
+
+.black {
+    color: $black;
+}
+
+.white {
+    color: $white;
+}
+
+.red {
+    @include color($red, "n");
+}
+
+.blue {
+    @include color($blue, "n");
+}
+
+.green {
+    @include color($green, "n");
+}
+
+.yellow {
+    @include color($yellow, "n");
+}
+
+.orange {
+    @include color($orange, "n");
+}
+
+.purple {
+    @include color($purple, "n");
+}
+
+.turquoise {
+    @include color($turquoise, "n");
+}
+
+.asfalt {
+    @include color($asfalt, "n");
+}
+
+.cyan {
+    @include color($cyan, "n");
+}
+
+.red-light {
+    @include color($red, "c");
+}
+
+.blue-light {
+    @include color($blue, "c");
+}
+
+.green-light {
+    @include color($green, "c");
+}
+
+.yellow-light {
+    @include color($yellow, "c");
+}
+
+.orange-light {
+    @include color($orange, "c");
+}
+
+.purple-light {
+    @include color($purple, "c");
+}
+
+.turquoise-light {
+    @include color($turquoise, "c");
+}
+
+.asfalt-light {
+    @include color($asfalt, "c");
+}
+
+.cyan-light {
+    @include color($cyan, "c");
+}
+
+.red-dark {
+    @include color($red, "e");
+}
+
+.blue-dark {
+    @include color($blue, "e");
+}
+
+.green-dark {
+    @include color($green, "e");
+}
+
+.yellow-dark {
+    @include color($yellow, "e");
+}
+
+.orange-dark {
+    @include color($orange, "e");
+}
+
+.purple-dark {
+    @include color($purple, "e");
+}
+
+.turquoise-dark {
+    @include color($turquoise, "e");
+}
+
+.asfalt-dark {
+    @include color($asfalt, "e");
+}
+
+.cyan-dark {
+    @include color($cyan, "e");
+}
+
+
+/*colors with hover*/
+
+.blackh {
+    color: $black;
+    &:hover {
+        @include color($red, "c");
+    }
+}
+
+.whiteh {
+    color: $white;
+    &:hover {
+        @include color($white, "e");
+    }
+}
+
+
+/*cores padrão de texto*/
+
+.redh {
+    @include color($red, "n");
+    &:hover {
+        @include color($red, "e");
+    }
+}
+
+.blueh {
+    @include color($blue, "n");
+    &:hover {
+        @include color($blue, "e");
+    }
+}
+
+.greenh {
+    @include color($green, "n");
+    &:hover {
+        @include color($green, "e");
+    }
+}
+
+.yellowh {
+    @include color($yellow, "n");
+    &:hover {
+        @include color($yellow, "e");
+    }
+}
+
+.orangeh {
+    @include color($orange, "n");
+    &:hover {
+        @include color($orange, "e");
+    }
+}
+
+.purpleh {
+    @include color($purple, "n");
+    &:hover {
+        @include color($purple, "e");
+    }
+}
+
+.turquoiseh {
+    @include color($turquoise, "n");
+}
+
+.asfalth {
+    @include color($turquoise, "n");
+    &:hover {
+        @include color($asfalt, "e");
+    }
+}
+
+.cyanh {
+    @include color($cyan, "n");
+    &:hover {
+        @include color($cyan, "e");
+    }
+}
+
+.red-lighth {
+    @include color($red, "c");
+    &:hover {
+        @include color($red, "n");
+    }
+}
+
+.blue-lighth {
+    @include color($blue, "c");
+    &:hover {
+        @include color($blue, "n");
+    }
+}
+
+.green-lighth {
+    @include color($green, "c");
+    &:hover {
+        @include color($green, "n");
+    }
+}
+
+.yellow-lighth {
+    @include color($yellow, "c");
+    &:hover {
+        @include color($yellow, "n");
+    }
+}
+
+.orange-lighth {
+    @include color($orange, "c");
+    &:hover {
+        @include color($orange, "n");
+    }
+}
+
+.purple-lighth {
+    @include color($purple, "c");
+    &:hover {
+        @include color($purple, "n");
+    }
+}
+
+.turquoise-lighth {
+    @include color($turquoise, "c");
+    &:hover {
+        @include color($turquoise, "n");
+    }
+}
+
+.asfalt-lighth {
+    @include color($asfalt, "c");
+    &:hover {
+        @include color($asfalt, "n");
+    }
+}
+
+.cyan-lighth {
+    @include color($cyan, "c");
+    &:hover {
+        @include color($cyan, "n");
+    }
+}
+
+.red-darkh {
+    @include color($red, "e");
+    &:hover {
+        @include color($red, "n");
+    }
+}
+
+.blue-darkh {
+    @include color($blue, "e");
+    &:hover {
+        @include color($blue, "n");
+    }
+}
+
+.green-darkh {
+    @include color($green, "e");
+    &:hover {
+        @include color($green, "n");
+    }
+}
+
+.yellow-darkh {
+    @include color($yellow, "e");
+    &:hover {
+        @include color($yellow, "n");
+    }
+}
+
+.orange-darkh {
+    @include color($orange, "e");
+    &:hover {
+        @include color($orange, "n");
+    }
+}
+
+.purple-darkh {
+    @include color($purple, "e");
+    &:hover {
+        @include color($purple, "n");
+    }
+}
+
+.turquoise-darkh {
+    @include color($turquoise, "e");
+    &:hover {
+        @include color($turquoise, "n");
+    }
+}
+
+.asfalt-darkh {
+    @include color($asfalt, "e");
+    &:hover {
+        @include color($asfalt, "n");
+    }
+}
+
+.cyan-darkh {
+    @include color($cyan, "e");
+    &:hover {
+        @include color($cyan, "n");
+    }
+}
+
+
+/*backgrounds*/
+
+.b-black {
+    background-color: $black;
+}
+
+.b-white {
+    background-color: $white;
+}
+
+.b-red {
+    @include bcolor($red, "n");
+}
+
+.b-blue {
+    @include bcolor($blue, "n");
+}
+
+.b-green {
+    @include bcolor($green, "n");
+}
+
+.b-yellow {
+    @include bcolor($yellow, "n");
+}
+
+.b-orange {
+    @include bcolor($orange, "n");
+}
+
+.b-purple {
+    @include bcolor($purple, "n");
+}
+
+.b-turquoise {
+    @include bcolor($turquoise, "n");
+}
+
+.b-asfalt {
+    @include bcolor($asfalt, "n");
+}
+
+.b-cyan {
+    @include bcolor($cyan, "n");
+}
+
+.b-red-light {
+    @include bcolor($red, "c");
+}
+
+.b-blue-light {
+    @include bcolor($blue, "c");
+}
+
+.b-green-light {
+    @include bcolor($green, "c");
+}
+
+.b-yellow-light {
+    @include bcolor($yellow, "c");
+}
+
+.b-orange-light {
+    @include bcolor($orange, "c");
+}
+
+.b-purple-light {
+    @include bcolor($purple, "c");
+}
+
+.b-turquoise-light {
+    @include bcolor($turquoise, "c");
+}
+
+.b-asfalt-light {
+    @include bcolor($asfalt, "c");
+}
+
+.b-cyan-light {
+    @include bcolor($cyan, "c");
+}
+
+.b-red-dark {
+    @include bcolor($red, "e");
+}
+
+.b-blue-dark {
+    @include bcolor($blue, "e");
+}
+
+.b-green-dark {
+    @include bcolor($green, "e");
+}
+
+.b-yellow-dark {
+    @include bcolor($yellow, "e");
+}
+
+.b-orange-dark {
+    @include bcolor($orange, "e");
+}
+
+.b-purple-dark {
+    @include bcolor($purple, "e");
+}
+
+.b-turquoise-dark {
+    @include bcolor($turquoise, "e");
+}
+
+.b-asfalt-dark {
+    @include bcolor($asfalt, "e");
+}
+
+.b-cyan-dark {
+    @include bcolor($cyan, "e");
+}
+
+
+/* backgrounds with hover*/
+
+.b-blackh {
+    @include bcolor($black, "n");
+    &:hover {
+        @include bcolor($black, "c");
+    }
+}
+
+.b-redh {
+    @include bcolor($red, "n");
+    &:hover {
+        @include bcolor($red, "e");
+    }
+}
+
+.b-blueh {
+    @include bcolor($blue, "n");
+    &:hover {
+        @include bcolor($blue, "c");
+    }
+}
+
+.b-greenh {
+    @include bcolor($green, "n");
+    &:hover {
+        @include bcolor($green, "c");
+    }
+}
+
+.b-yellowh {
+    @include bcolor($yellow, "n");
+    &:hover {
+        @include bcolor($yellow, "e");
+    }
+}
+
+.b-orangeh {
+    @include bcolor($orange, "n");
+    &:hover {
+        @include bcolor($orange, "c");
+    }
+}
+
+.b-purpleh {
+    @include bcolor($purple, "n");
+    &:hover {
+        @include bcolor($purple, "c");
+    }
+}
+
+.b-turquoiseh {
+    @include bcolor($turquoise, "n");
+    &:hover {
+        @include bcolor($turquoise, "c");
+    }
+}
+
+.b-asfalth {
+    @include bcolor($asfalt, "n");
+    &:hover {
+        @include bcolor($asfalt, "c");
+    }
+}
+
+.b-cyanh {
+    @include bcolor($cyan, "n");
+    &:hover {
+        @include bcolor($cyan, "c");
+    }
+}
+
+.b-red-lighth {
+    @include bcolor($red, "c");
+    &:hover {
+        @include bcolor($red, "e");
+    }
+}
+
+.b-blue-lighth {
+    @include bcolor($blue, "c");
+    &:hover {
+        @include bcolor($blue, "e");
+    }
+}
+
+.b-green-lighth {
+    @include bcolor($green, "c");
+    &:hover {
+        @include bcolor($green, "e");
+    }
+}
+
+.b-yellow-lighth {
+    @include bcolor($yellow, "c");
+    &:hover {
+        @include bcolor($yellow, "e");
+    }
+}
+
+.b-orange-lighth {
+    @include bcolor($orange, "c");
+    &:hover {
+        @include bcolor($orange, "e");
+    }
+}
+
+.b-purple-lighth {
+    @include bcolor($purple, "c");
+    &:hover {
+        @include bcolor($purple, "e");
+    }
+}
+
+.b-turquoise-lighth {
+    @include bcolor($turquoise, "c");
+    &:hover {
+        @include bcolor($turquoise, "e");
+    }
+}
+
+.b-asfalt-lighth {
+    @include bcolor($asfalt, "c");
+    &:hover {
+        @include bcolor($asfalt, "e");
+    }
+}
+
+.b-cyan-lighth {
+    @include bcolor($cyan, "c");
+    &:hover {
+        @include bcolor($cyan, "e");
+    }
+}
+
+.b-red-darkh {
+    @include bcolor($red, "e");
+    &:hover {
+        @include bcolor($red, "c");
+    }
+}
+
+.b-blue-darkh {
+    @include bcolor($blue, "e");
+    &:hover {
+        @include bcolor($blue, "c");
+    }
+}
+
+.b-green-darkh {
+    @include bcolor($green, "e");
+    &:hover {
+        @include bcolor($green, "c");
+    }
+}
+
+.b-yellow-darkh {
+    @include bcolor($yellow, "e");
+    &:hover {
+        @include bcolor($yellow, "c");
+    }
+}
+
+.b-orange-darkh {
+    @include bcolor($orange, "e");
+    &:hover {
+        @include bcolor($orange, "c");
+    }
+}
+
+.b-purple-darkh {
+    @include bcolor($purple, "e");
+    &:hover {
+        @include bcolor($purple, "c");
+    }
+}
+
+.b-turquoise-darkh {
+    @include bcolor($turquoise, "e");
+    &:hover {
+        @include bcolor($turquoise, "c");
+    }
+}
+
+.b-asfalt-darkh {
+    @include bcolor($asfalt, "e");
+    &:hover {
+        @include bcolor($asfalt, "c");
+    }
+}
+
+.b-cyan-darkh {
+    @include bcolor($cyan, "e");
+    &:hover {
+        @include bcolor($cyan, "c");
+    }
+}
+
+
+/*colors to genéric uses*/
+
+.ok {
+    @include bcolor($green, "c", 25%);
+    @include color($green, "e", "", 20);
+    border: solid 1px darken($green, 35%);
+}
+
+.cancel {
+    @include bcolor($red, "c", 25%);
+    @include color($red, "e", "", 20);
+    border: solid 1px darken($red, 35%);
+}
+
+.information {
+    @include bcolor($cyan, "c", 25%);
+    @include color($cyan, "e", "");
+    border: solid 1px darken($cyan, 15%);
+}
+
+.danger {
+    @include bcolor($orange, "c", 40%);
+    @include color($orange, "e", "");
+    border: solid 1px darken($orange, 35%);
+}
