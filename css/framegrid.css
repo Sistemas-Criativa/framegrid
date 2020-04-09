@@ -891,25 +891,29 @@ abbr {
   background-color: #b5dfb5 ;
   transition: all 350ms;
   color: #357935 ;
-  border: solid 1px #1e441e; }
+  border: solid 1px #1e441e;
+  display: inline-block; }
 
 .cancel {
   background-color: #f0b9b8 ;
   transition: all 350ms;
   color: #a02622 ;
-  border: solid 1px #611715; }
+  border: solid 1px #611715;
+  display: inline-block; }
 
 .information {
   background-color: #c5e9f3 ;
   transition: all 350ms;
   color: #31b0d5 ;
-  border: solid 1px #28a1c5; }
+  border: solid 1px #28a1c5;
+  display: inline-block; }
 
 .danger {
   background-color: #fdedd4 ;
   transition: all 350ms;
   color: #c87f0a ;
-  border: solid 1px #4f3204; }
+  border: solid 1px #4f3204;
+  display: inline-block; }
 
 /*size of borders*/
 .border-1 {
@@ -1865,18 +1869,18 @@ abbr {
   text-decoration: none; }
 
 .btn-big {
-  font-size: 2em;
-  padding: 10px 20px 10px 20px !important;
+  font-size: 2rem;
+  padding: 10px 20px 10px 20px;
   border: solid 1px; }
 
 .btn-mid {
-  font-size: 1.5em;
-  padding: 5px 10px 5px 10px !important;
+  font-size: 1.5rem;
+  padding: 5px 10px 5px 10px;
   border: solid 1px; }
 
 .btn-small {
-  font-size: 0.7em;
-  padding: 2px 4px 2px 4px !important;
+  font-size: 0.7rem;
+  padding: 2px 4px 2px 4px;
   border: solid 1px; }
 
 /*botoes nomeados*/
@@ -2012,75 +2016,75 @@ abbr {
   .hidden {
     display: none !important; } }
 @media screen and (max-width: 479px) {
-  .col-celular-1 {
+  .col-mobile-1 {
     width: 5.55556%;
     max-width: 26.61111px; }
 
-  .col-celular-2 {
+  .col-mobile-2 {
     width: 11.11111%;
     max-width: 53.22222px; }
 
-  .col-celular-3 {
+  .col-mobile-3 {
     width: 16.66667%;
     max-width: 79.83333px; }
 
-  .col-celular-4 {
+  .col-mobile-4 {
     width: 22.22222%;
     max-width: 106.44444px; }
 
-  .col-celular-5 {
+  .col-mobile-5 {
     width: 27.77778%;
     max-width: 133.05556px; }
 
-  .col-celular-6 {
+  .col-mobile-6 {
     width: 33.33333%;
     max-width: 159.66667px; }
 
-  .col-celular-7 {
+  .col-mobile-7 {
     width: 38.88889%;
     max-width: 186.27778px; }
 
-  .col-celular-8 {
+  .col-mobile-8 {
     width: 44.44444%;
     max-width: 212.88889px; }
 
-  .col-celular-9 {
+  .col-mobile-9 {
     width: 50%;
     max-width: 239.5px; }
 
-  .col-celular-10 {
+  .col-mobile-10 {
     width: 55.55556%;
     max-width: 266.11111px; }
 
-  .col-celular-11 {
+  .col-mobile-11 {
     width: 61.11111%;
     max-width: 292.72222px; }
 
-  .col-celular-12 {
+  .col-mobile-12 {
     width: 66.66667%;
     max-width: 319.33333px; }
 
-  .col-celular-13 {
+  .col-mobile-13 {
     width: 72.22222%;
     max-width: 345.94444px; }
 
-  .col-celular-14 {
+  .col-mobile-14 {
     width: 77.77778%;
     max-width: 372.55556px; }
 
-  .col-celular-15 {
+  .col-mobile-15 {
     width: 83.33333%;
     max-width: 399.16667px; }
 
-  .col-celular-16 {
+  .col-mobile-16 {
     width: 88.88889%;
     max-width: 425.77778px; }
 
-  .col-celular-17 {
+  .col-mobile-17 {
     width: 94.44444%;
     max-width: 452.38889px; }
 
-  .col-celular-18 {
+  .col-mobile-18 {
     width: 100%;
     max-width: 479px; }
 

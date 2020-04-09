@@ -3,22 +3,22 @@
 @mixin button-size($size) {
     @if $size=="big" {
         .btn-big {
-            font-size: 2em;
-            padding: 10px 20px 10px 20px !important;
+            font-size: 2rem;
+            padding: 10px 20px 10px 20px;
             border: solid 1px;
         }
     }
     @else if $size=="mid" {
         .btn-mid {
-            font-size: 1.5em;
-            padding: 5px 10px 5px 10px !important;
+            font-size: 1.5rem;
+            padding: 5px 10px 5px 10px;
             border: solid 1px;
         }
     }
     @else {
         .btn-small {
-            font-size: 0.7em;
-            padding: 2px 4px 2px 4px !important;
+            font-size: 0.7rem;
+            padding: 2px 4px 2px 4px;
             border: solid 1px;
         }
     }

@@ -159,7 +159,7 @@ $cols: 18;
 
 @mixin mobile($width-container) {
     $multiplicador: 1;
-    @include widths($width-container, "-celular");
+    @include widths($width-container, "-mobile");
     body {
         font-size: $tamanho-fonte * $multiplicador;
     }

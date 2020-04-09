@@ -745,22 +745,26 @@ $button-letter-color: #999;
     @include bcolor($green, "c", 25%);
     @include color($green, "e", "", 20);
     border: solid 1px darken($green, 35%);
+    display: inline-block;
 }
 
 .cancel {
     @include bcolor($red, "c", 25%);
     @include color($red, "e", "", 20);
     border: solid 1px darken($red, 35%);
+    display: inline-block;
 }
 
 .information {
     @include bcolor($cyan, "c", 25%);
     @include color($cyan, "e", "");
     border: solid 1px darken($cyan, 15%);
+    display: inline-block;
 }
 
 .danger {
     @include bcolor($orange, "c", 40%);
     @include color($orange, "e", "");
     border: solid 1px darken($orange, 35%);
+    display: inline-block;
 }
