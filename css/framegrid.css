@@ -1866,30 +1866,35 @@ abbr {
   display: block;
   width: auto;
   font-family: "Segoe UI", Arial, Helvetica;
-  text-decoration: none; }
+  text-decoration: none;
+  cursor: pointer; }
 
 .btn-big {
   font-size: 2rem;
   padding: 10px 20px 10px 20px;
-  border: solid 1px; }
+  border: solid 1px;
+  cursor: pointer; }
 
 .btn-mid {
   font-size: 1.5rem;
   padding: 5px 10px 5px 10px;
-  border: solid 1px; }
+  border: solid 1px;
+  cursor: pointer; }
 
 .btn-small {
   font-size: 0.7rem;
   padding: 2px 4px 2px 4px;
-  border: solid 1px; }
+  border: solid 1px;
+  cursor: pointer; }
 
 /*botoes nomeados*/
 .btn-primary {
   background-color: #0275d8 !important;
   transition: all 350ms;
   color: #fff !important;
+  cursor: pointer;
   padding: 5px 10px 5px 10px;
-  border: solid #0275d8; }
+  border: solid 1px #0275d8; }
   .btn-primary:hover {
     background-color: #025aa5 !important; }
   .btn-primary:disabled {
@@ -1900,8 +1905,9 @@ abbr {
   background-color: #fff !important;
   transition: all 350ms;
   color: #000 !important;
+  cursor: pointer;
   padding: 5px 10px 5px 10px;
-  border: solid #000; }
+  border: solid 1px #000; }
   .btn-secondary:hover {
     background-color: #ccc !important; }
   .btn-secondary:disabled {
@@ -1912,8 +1918,9 @@ abbr {
   background-color: #5cb85c !important;
   transition: all 350ms;
   color: #fff !important;
+  cursor: pointer;
   padding: 5px 10px 5px 10px;
-  border: solid #5cb85c; }
+  border: solid 1px #5cb85c; }
   .btn-ok:hover {
     background-color: #449d44 !important; }
   .btn-ok:disabled {
@@ -1924,8 +1931,9 @@ abbr {
   background-color: #d9534f !important;
   transition: all 350ms;
   color: #fff !important;
+  cursor: pointer;
   padding: 5px 10px 5px 10px;
-  border: solid #d9534f; }
+  border: solid 1px #d9534f; }
   .btn-cancel:hover {
     background-color: #c9302c !important; }
   .btn-cancel:disabled {
@@ -1936,8 +1944,9 @@ abbr {
   background-color: #5bc0de !important;
   transition: all 350ms;
   color: #fff !important;
+  cursor: pointer;
   padding: 5px 10px 5px 10px;
-  border: solid #5bc0de; }
+  border: solid 1px #5bc0de; }
   .btn-information:hover {
     background-color: #31b0d5 !important; }
   .btn-information:disabled {
@@ -1948,8 +1957,9 @@ abbr {
   background-color: #f39c12 !important;
   transition: all 350ms;
   color: #fff !important;
+  cursor: pointer;
   padding: 5px 10px 5px 10px;
-  border: solid #f39c12; }
+  border: solid 1px #f39c12; }
   .btn-danger:hover {
     background-color: #c87f0a !important; }
   .btn-danger:disabled {
@@ -1959,7 +1969,8 @@ abbr {
 /*botao em bloco 100%*/
 .btn-block {
   display: block;
-  width: 100%; }
+  width: 100%;
+  cursor: pointer; }
 
 .btn-alternate {
   position: relative;
@@ -1991,6 +2002,7 @@ abbr {
 .btn-yes-no {
   position: relative;
   display: inline-block;
+  cursor: pointer;
   padding: 5px; }
   .btn-yes-no > a {
     padding: 5px 20px;
@@ -2397,7 +2409,10 @@ select {
 .cascade-list {
   list-style: none; }
 
-.lista-em-linha > li {
+.inline-list {
+  display: flex; }
+
+.inline-list > li {
   display: inline-block; }
 
 /*lista alternada*/

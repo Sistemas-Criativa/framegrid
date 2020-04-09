@@ -6,6 +6,7 @@
             font-size: 2rem;
             padding: 10px 20px 10px 20px;
             border: solid 1px;
+            cursor: pointer;
         }
     }
     @else if $size=="mid" {
@@ -13,6 +14,7 @@
             font-size: 1.5rem;
             padding: 5px 10px 5px 10px;
             border: solid 1px;
+            cursor: pointer;
         }
     }
     @else {
@@ -20,6 +22,7 @@
             font-size: 0.7rem;
             padding: 2px 4px 2px 4px;
             border: solid 1px;
+            cursor: pointer;
         }
     }
 }
@@ -29,6 +32,7 @@
     width: auto;
     font-family: $fonte;
     text-decoration: none;
+    cursor: pointer;
 }
 
 @include button-size("big");
@@ -40,8 +44,9 @@
 .btn-primary {
     @include bcolor($blue, "n", 10%, "!important");
     @include color($white, "n", "!important");
+    cursor: pointer;
     padding: $padding-botoes;
-    border: solid $blue;
+    border: solid 1px $blue;
     &:hover {
         @include bcolor($blue, "e", 10%, "!important");
     }
@@ -54,8 +59,9 @@
 .btn-secondary {
     @include bcolor($white, "n", 10%, "!important");
     @include color($black, "n", "!important");
+    cursor: pointer;
     padding: $padding-botoes;
-    border: solid $black;
+    border: solid 1px $black;
     &:hover {
         @include bcolor($gray, "n", 10%, "!important");
     }
@@ -68,8 +74,9 @@
 .btn-ok {
     @include bcolor($green, "n", 10%, "!important");
     @include color($white, "n", "!important");
+    cursor: pointer;
     padding: $padding-botoes;
-    border: solid $green;
+    border: solid 1px $green;
     &:hover {
         @include bcolor($green, "e", 10%, "!important");
     }
@@ -82,8 +89,9 @@
 .btn-cancel {
     @include bcolor($red, "n", 10%, "!important");
     @include color($white, "n", "!important");
+    cursor: pointer;
     padding: $padding-botoes;
-    border: solid $red;
+    border: solid 1px $red;
     &:hover {
         @include bcolor($red, "e", 10%, "!important");
     }
@@ -96,8 +104,9 @@
 .btn-information {
     @include bcolor($cyan, "n", 10%, "!important");
     @include color($white, "n", "!important");
+    cursor: pointer;
     padding: $padding-botoes;
-    border: solid $cyan;
+    border: solid 1px $cyan;
     &:hover {
         @include bcolor($cyan, "e", 10%, "!important");
     }
@@ -110,8 +119,9 @@
 .btn-danger {
     @include bcolor($orange, "n", 10%, "!important");
     @include color($white, "n", "!important");
+    cursor: pointer;
     padding: $padding-botoes;
-    border: solid $orange;
+    border: solid 1px $orange;
     &:hover {
         @include bcolor($orange, "e", 10%, "!important");
     }
@@ -127,6 +137,7 @@
 .btn-block {
     display: block;
     width: 100%;
+    cursor: pointer;
 }
 
 .btn-alternate {
@@ -165,6 +176,7 @@
 .btn-yes-no {
     position: relative;
     display: inline-block;
+    cursor: pointer;
     padding: 5px;
     &>a {
         padding: 5px 20px;

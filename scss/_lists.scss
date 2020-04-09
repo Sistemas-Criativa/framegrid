@@ -6,8 +6,12 @@
     list-style: none;
 }
 
-.lista-em-linha>li {
-    display: inline-block
+.inline-list {
+    display: flex;
+}
+
+.inline-list>li {
+    display: inline-block;
 }
 
 
