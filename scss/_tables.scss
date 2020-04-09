@@ -1,0 +1,27 @@
+/*tables*/
+
+table.table {
+    width: 100%;
+    overflow-x: auto;
+    border-spacing: 0;
+    border-collapse: collapse;
+    &>thead>tr>th {
+        padding: 10px;
+        font-weight: bold;
+    }
+    &>tbody>tr>td {
+        padding: 5px;
+    }
+    &.table-bordered>thead>tr>th,
+    &.table-bordered>tbody>tr>td {
+        border-bottom: solid 1px $gray;
+        border-top: solid 1px $gray;
+    }
+    &.table-full-bordered>thead>tr>th,
+    &.table-full-bordered>tbody>tr>td {
+        border: solid 1px $gray;
+    }
+    &.table-striped:nth-child(2n) {
+        background-color: $gray;
+    }
+}
