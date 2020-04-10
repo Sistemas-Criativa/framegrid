@@ -140,39 +140,6 @@
     cursor: pointer;
 }
 
-.btn-alternate {
-    position: relative;
-    padding: 5px;
-    overflow: hidden;
-    cursor: pointer;
-    width: auto;
-    display: inline-block;
-    text-align: center;
-    @include transition;
-    & .btn-text,
-    .btn-icon {
-        position: relative;
-        display: inline-block;
-    }
-    &:hover>.btn-icon {
-        left: 6%;
-        @include transition;
-    }
-    &:hover>.btn-text {
-        left: -5px;
-        @include transition;
-    }
-    & .btn-icon {
-        @include transition;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    & .btn-text {
-        @include transition;
-        left: 100%;
-    }
-}
-
 .btn-yes-no {
     position: relative;
     display: inline-block;
