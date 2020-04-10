@@ -60,7 +60,7 @@ blockquote {
 .example {
     position: relative;
     margin-top: 25px;
-    padding: 5px;
+    padding: 5px 10px;
     background-color: lighten($black, 97%);
     border: solid 1px $blue;
     & .example-title {

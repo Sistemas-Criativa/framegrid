@@ -2598,7 +2598,7 @@ blockquote {
 .example {
   position: relative;
   margin-top: 25px;
-  padding: 5px;
+  padding: 5px 10px;
   background-color: #f7f7f7;
   border: solid 1px #0275d8; }
   .example .example-title {
@@ -2629,39 +2629,39 @@ blockquote {
     left: 0px; }
 
 /*lateral menu*/
-.lateral-menu {
+.side-menu {
   position: relative;
   border: solid 1px;
   font-size: 1em; }
-  .lateral-menu > p {
+  .side-menu > p {
     font-size: 1.3em;
     padding: 5px;
     background-color: #f0f0f0;
     border-bottom: solid 1px #ccc; }
-  .lateral-menu > ul {
+  .side-menu > ul {
     list-style: none;
     width: 100%; }
-    .lateral-menu > ul > li {
+    .side-menu > ul > li {
       width: 100%;
       border-bottom: solid 1px #ccc; }
-      .lateral-menu > ul > li > a {
+      .side-menu > ul > li > a {
         width: 100;
         cursor: pointer;
         display: block;
         padding: 5px;
         font-size: 0.8em;
         transition: all 350ms; }
-        .lateral-menu > ul > li > a:hover {
+        .side-menu > ul > li > a:hover {
           background-color: #f0f0f0;
           transition: all 350ms; }
-        .lateral-menu > ul > li > a:hover > i {
+        .side-menu > ul > li > a:hover > i {
           color: #0275d8;
           transition: all 350ms; }
-        .lateral-menu > ul > li > a > i {
+        .side-menu > ul > li > a > i {
           font-size: 0.9em; }
-      .lateral-menu > ul > li.selected {
+      .side-menu > ul > li.selected {
         border-left: solid 1px #0275d8; }
-        .lateral-menu > ul > li.selected > a > i {
+        .side-menu > ul > li.selected > a > i {
           color: #0275d8;
           font-size: 0.9em; }
 
