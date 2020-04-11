@@ -97,6 +97,9 @@ a {
 .display-block {
   display: block; }
 
+.display-inline {
+  display: inline; }
+
 .display-table {
   display: table; }
 
