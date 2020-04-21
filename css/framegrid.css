@@ -1818,7 +1818,9 @@ select {
   background-color: #d4d4d4;
   border: solid 1px #ccc;
   color: #333333;
-  padding: 8px; }
+  padding: 8px;
+  align-items: center;
+  display: flex; }
 
 /*lista padrao*/
 .group-list,
