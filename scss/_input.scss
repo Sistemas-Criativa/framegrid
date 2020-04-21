@@ -36,7 +36,8 @@ input[type=email] {
 
 input[type=submit],
 input[type=button],
-input[type=reset] {
+input[type=reset],
+button {
     cursor: pointer;
     -webkit-appearance: none;
     -moz-appearance: none;

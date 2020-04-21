@@ -1706,7 +1706,8 @@ input[type=email] {
 /*buttons*/
 input[type=submit],
 input[type=button],
-input[type=reset] {
+input[type=reset],
+button {
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1722,7 +1723,8 @@ input[type=reset] {
   transition: all 350ms; }
   input[type=submit]:hover,
   input[type=button]:hover,
-  input[type=reset]:hover {
+  input[type=reset]:hover,
+  button:hover {
     background-color: #025aa5 ; }
 
 /*checkboxes*/
